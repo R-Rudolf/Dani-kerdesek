@@ -28,11 +28,15 @@ lista = [
     "Amq5ThRepSE"
 ]
 
+$(window).load(function(){
+    $("#videoFrame").height( $("#videoFrame").width()*(510.0/854.0) );
+});
+
 function onLoad(){
-    console.log("teszt")
+    console.log("teszt");
 }
 
 function next_btn(){
-    console.log("Hello World!")
-    document.getElementById('videoFrame').src = embed_code + lista[index++]
+    console.log("Hello World!");
+    document.getElementById('videoFrame').src = embed_code + lista[index++];
 };
