@@ -1,42 +1,73 @@
 
 embed_code = "https://www.youtube.com/embed/"
 
-index = 0
+end = "QO71wxP-KZE"
+
+index = -1;
+good = 0;
+bad = 0;
+all = 20;
 
 lista = [
-    "ihfVY0XSaWo",
-    "3uuAw7Gb55A",
-    "pzeOCnZ-ym0",
-    "tRHDuLXIi1Y",
-    "w85z3VWSIy8",
-    "bFIaKLE8-Cs",
-    "4wfOzIE3esM",
-    "uW8VGnBARUg",
-    "gybLVAlP0xQ",
-    "AXeAVDM2xUA",
-    "0OEEaEdomJE",
-    "SQu2IB-aOFo",
-    "qBsyWm3B9zQ",
-    "InWeW-UHagU",
-    "XqAAEOHba58",
-    "a_JD5gFczPY",
-    "14c-nHpmkhM",
-    "x9njb2k7DCo",
-    "QO71wxP-KZE",
-    "3KHmYkyokVc",
-    "jyXs5DEfGV4",
-    "Amq5ThRepSE"
+    "ihfVY0XSaWo",//1
+    "w85z3VWSIy8",//2
+    "uW8VGnBARUg",//3
+    "pzeOCnZ-ym0",//4
+    "tRHDuLXIi1Y",//5
+    "x9njb2k7DCo",//ötös szintén
+    "14c-nHpmkhM",//6
+    "qBsyWm3B9zQ",//7
+    "3uuAw7Gb55A",//8
+    "4wfOzIE3esM",//9
+    "AXeAVDM2xUA",//10
+    "Amq5ThRepSE",//11
+    "a_JD5gFczPY",//12
+    "0OEEaEdomJE",//13
+    "bFIaKLE8-Cs",//14
+    "3KHmYkyokVc",//15
+    "gybLVAlP0xQ",//16
+    "SQu2IB-aOFo",//17
+    "jyXs5DEfGV4",//18
+    "InWeW-UHagU",//19
+    "XqAAEOHba58",//20
 ]
 
 $(window).load(function(){
     $("#videoFrame").height( $("#videoFrame").width()*(510.0/854.0) );
 });
 
-function onLoad(){
-    console.log("teszt");
+function next(){
+    index++;
+
+
+    if(index == 5){
+        document.getElementById('valasz1').style.visibility = "hidden"
+        document.getElementById('valasz2').style.visibility = "hidden"
+
+        document.getElementById('kerdes5').style.visibility = "visible"
+    }else if (index == 6){
+        document.getElementById('valasz1').style.visibility = "visible"
+        document.getElementById('valasz2').style.visibility = "visible"
+
+        document.getElementById('kerdes5').style.visibility = "hidden"
+    }else if(index == 20){
+        document.getElementById('videoFrame').text("Vége")
+        document.getElementById('videoFrame').src = embed_code + end;
+        return;
+    }
+
+    document.getElementById('videoFrame').src = embed_code + lista[index];
+    document.getElementById('good_percent').style.width = good/all*100+"%"
+    document.getElementById('bad_percent').style.width = bad/all*100+"%"
+
 }
 
-function next_btn(){
-    console.log("Hello World!");
-    document.getElementById('videoFrame').src = embed_code + lista[index++];
-};
+function good_btn(){
+    good++;
+    next();
+}
+
+function bad_btn(){
+    bad++;
+    next();
+}
