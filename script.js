@@ -38,7 +38,7 @@ $(window).load(function(){
 
 function next(){
     index++;
-    //document.getElementById('videoFrame').src = embed_code + lista[index];
+    document.getElementById('videoFrame').src = embed_code + lista[index];
 
     corrig = (index > 4)? -1: 0;
     document.getElementById('cim').innerHTML = (index+1+corrig)+". Kérdés"
