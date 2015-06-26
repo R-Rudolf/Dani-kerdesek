@@ -6,7 +6,7 @@ end = "QO71wxP-KZE"
 index = -1;
 good = 0;
 bad = 0;
-all = 20;
+all = 19;
 
 lista = [
     "ihfVY0XSaWo",//1
@@ -38,28 +38,34 @@ $(window).load(function(){
 
 function next(){
     index++;
+    //document.getElementById('videoFrame').src = embed_code + lista[index];
 
+    corrig = (index > 4)? -1: 0;
+    document.getElementById('cim').innerHTML = (index+1+corrig)+". Kérdés"
 
-    if(index == 5){
+    if(index == 0){
+        document.getElementById('indulhat').style.visibility = "hidden"
+        document.getElementById('valasz1').style.visibility = "visible"
+        document.getElementById('valasz2').style.visibility = "visible"
+    }else if(index == 4){
         document.getElementById('valasz1').style.visibility = "hidden"
         document.getElementById('valasz2').style.visibility = "hidden"
 
         document.getElementById('kerdes5').style.visibility = "visible"
-    }else if (index == 6){
+    }else if (index == 5){
         document.getElementById('valasz1').style.visibility = "visible"
         document.getElementById('valasz2').style.visibility = "visible"
 
         document.getElementById('kerdes5').style.visibility = "hidden"
     }else if(index == 20){
-        document.getElementById('videoFrame').text("Vége")
+        document.getElementById('valasz1').style.visibility = "hidden"
+        document.getElementById('valasz2').style.visibility = "hidden"
+        document.getElementById('cim').innerHTML = "Happy End!"
         document.getElementById('videoFrame').src = embed_code + end;
-        return;
     }
 
-    document.getElementById('videoFrame').src = embed_code + lista[index];
     document.getElementById('good_percent').style.width = good/all*100+"%"
     document.getElementById('bad_percent').style.width = bad/all*100+"%"
-
 }
 
 function good_btn(){

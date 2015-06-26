@@ -1,58 +1,122 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <title>Dani ismeret teszt</title>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Rudolf Horvath">
 
-    
-</head>
-<body>
-<h1>Dani kérdései szuperhonlap</h1>
+    <title>Cover Template for Bootstrap</title>
 
-<iframe id="videoFrame" width="854" height="510" src="https://www.youtube.com/embed/C-1zJyH3Bto" frameborder="0" allowfullscreen></iframe>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-<script>
-
-embed_code = "https://www.youtube.com/embed/"
-
-index = 0
-
-lista = [
-    "ihfVY0XSaWo", 
-    "3uuAw7Gb55A",
-    "pzeOCnZ-ym0",
-    "tRHDuLXIi1Y",
-    "w85z3VWSIy8",
-    "bFIaKLE8-Cs",
-    "4wfOzIE3esM",
-    "uW8VGnBARUg",
-    "gybLVAlP0xQ",
-    "AXeAVDM2xUA",
-    "0OEEaEdomJE",
-    "SQu2IB-aOFo",
-    "qBsyWm3B9zQ",
-    "InWeW-UHagU",
-    "XqAAEOHba58",
-    "a_JD5gFczPY",
-    "14c-nHpmkhM",
-    "x9njb2k7DCo",
-    "QO71wxP-KZE",
-    "3KHmYkyokVc",
-    "jyXs5DEfGV4",
-    "Amq5ThRepSE"
-]
-
-function myFunction(){
-    document.getElementById('videoFrame').src = embed_code + lista[index++]
-};
-
-</script>
-<br>
-<button onclick="myFunction()">Következő</button>
-
-<br>
+  <body>
 
 
-</body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" >Dani ismeret teszt</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+            <!--
+        <div class="col-md-2">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">
+              Kérdések
+            </a>
+            <a href="#" class="list-group-item">Első kérdés</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+            <a href="#" class="list-group-item">...</a>
+        </div>
+        </div>
+         -->
+        <div class="col-md-10">
+          <h2 id="cim2">Videók</h2>
+          <h2 id="cim">Köszöntlek az megmérettetésen!</h2>
+
+          <div class="progress">
+            <div id="good_percent" class="progress-bar progress-bar-success" style="width: 0%"><span class="sr-only">35% Complete (success)</span></div>
+            <div id="bad_percent" class="progress-bar progress-bar-danger" style="width: 0%"><span class="sr-only">10% Complete (danger)</span></div>
+          </div>
+
+          <iframe id="videoFrame" width="100%" src="https://www.youtube.com/embed/C-1zJyH3Bto" frameborder="0" allowfullscreen></iframe>
+
+       </div>
+        <div class="col-md-2">
+
+            <h2 id="valasz0" >Válasz:</h2>
+            <h2 id="valasz1" style="visibility: hidden">Válasz:</h2>
+
+            <div id="valasz2" class="btn-group-vertical" style="visibility: hidden" role="group" aria-label="Large button group">
+              <button onclick="good_btn()" type="button" class="btn btn-success">Jó válasz</button>
+              <button onclick="bad_btn()" type="button" class="btn btn-danger">Rossz válasz</button>
+            </div>
+            <button id="kerdes5" onclick="next()" style="visibility: hidden" type="button" class="btn btn-success">Második fele</button>
+            <button id="indulhat" onclick="next()" type="button" class="btn btn-success">Indulhat!</button>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>Design by: Rudolf, who <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Anikó</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
